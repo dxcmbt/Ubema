@@ -10,7 +10,8 @@
 const JAMS = [
   {
     id: 'j1', emoji: '🍓',
-    name: 'Frutilla Clásica',
+    img: 'img/MermeladaFrutilla.png',
+    name: 'Frutilla',
     category: 'mermelada', filter: 'dulce',
     flavors: ['Dulce', 'Fresco', 'Clásico'],
     desc: 'Frutillas frescas cosechadas en temporada alta, cocinadas lentamente con azúcar de caña para preservar todo su color y aroma natural. La más pedida de Ubema.',
@@ -18,38 +19,25 @@ const JAMS = [
   },
   {
     id: 'j2', emoji: '🍑',
-    name: 'Durazno y Vainilla',
+    img: 'img/mermeladaDurazno.png',
+    name: 'Durazno Amarillo',
     category: 'mermelada', filter: 'dulce',
     flavors: ['Dulce', 'Aromático', 'Suave'],
-    desc: 'Duraznos de temporada pelados a mano, con una pizca de vainilla natural que eleva cada cucharada. Textura densa con trozos de fruta entera.',
+    desc: 'Duraznos amarillos de temporada pelados a mano, con una pizca de vainilla natural que eleva cada cucharada. Textura densa con trozos de fruta entera.',
     uses: 'Ideal para acompañar queso fresco, yogur natural o como relleno de alfajores y tortas caseras.'
   },
   {
-    id: 'j3', emoji: '🍊',
-    name: 'Naranja y Jengibre',
-    category: 'mermelada', filter: 'acida',
-    flavors: ['Cítrico', 'Picante suave', 'Intenso'],
-    desc: 'Naranjas de cáscara fina con jengibre fresco rallado. Un sabor que despierta el paladar. Cocción lenta en cobre para una consistencia perfecta.',
-    uses: 'Excelente con panes de masa madre, quesos maduros o para glasear carnes de cerdo y pollo a la parrilla.'
-  },
-  {
-    id: 'j4', emoji: '🫐',
-    name: 'Murta Silvestre',
-    category: 'mermelada', filter: 'acida',
-    flavors: ['Ácido', 'Silvestre', 'Profundo'],
-    desc: 'Recogida a mano en los bosques nativos del sur de Chile. La murta tiene un sabor único y profundamente local, imposible de replicar con fruta de invernadero.',
-    uses: 'Combina excepcionalmente con queso de cabra, tostadas con mantequilla o como topping en helados artesanales.'
-  },
-  {
     id: 'j5', emoji: '🍇',
-    name: 'Ciruela Negra',
+    img: 'img/MerrmeladaCiruela.png',
+    name: 'Ciruela',
     category: 'mermelada', filter: 'dulce',
     flavors: ['Dulce', 'Profundo', 'Con cuerpo'],
-    desc: 'Ciruelas negras de cosecha propia, deshuesadas y cocidas con canela en rama. Una mermelada oscura, densa y con personalidad que no deja indiferente.',
+    desc: 'Ciruelas de cosecha propia, deshuesadas y cocidas con canela en rama. Una mermelada oscura, densa y con personalidad que no deja indiferente.',
     uses: 'Perfecta en tabla de quesos, con mantequilla en pan negro o como base de salsas para carnes rojas.'
   },
   {
     id: 'j6', emoji: '🌶️',
+    img: 'img/AjiMango.png',
     name: 'Ají y Mango',
     category: 'mermelada', filter: 'especial',
     flavors: ['Agridulce', 'Picante', 'Tropical'],
@@ -58,27 +46,48 @@ const JAMS = [
   },
   {
     id: 'j7', emoji: '🍒',
-    name: 'Guinda Amarga',
+    img: 'img/MermeladaCereza.png',
+    name: 'Cereza',
     category: 'mermelada', filter: 'acida',
     flavors: ['Ácido', 'Afrutado', 'Intenso'],
-    desc: 'Guindas de temporada corta, recogidas en su punto exacto de madurez. Color rojo rubí profundo con sabor que va de lo dulce a lo ácido en cada cucharada.',
+    desc: 'Cerezas de temporada corta, recogidas en su punto exacto de madurez. Color rojo rubí profundo con sabor que va de lo dulce a lo ácido en cada cucharada.',
     uses: 'Clásica sobre postres de chocolate, panqueques o con helado de vainilla artesanal de temporada.'
   },
   {
-    id: 'j8', emoji: '🍋',
-    name: 'Limón de Pica',
-    category: 'mermelada', filter: 'acida',
-    flavors: ['Cítrico', 'Intenso', 'Refrescante'],
-    desc: 'Con los famosos limones de Pica, de cáscara delgada y jugo abundante. Poca azúcar para que la fruta brille sola. Una mermelada de carácter que no da tregua.',
-    uses: 'Perfecta en tostadas, como relleno de tartitas o para refrescar un yogur natural en el desayuno.'
-  },
-  {
     id: 'j9', emoji: '🍅',
+    img: 'img/tomateYalbahaca.png',
     name: 'Tomate y Albahaca',
     category: 'mermelada', filter: 'especial',
     flavors: ['Salado-dulce', 'Herbáceo', 'Gourmet'],
     desc: 'Nuestra mermelada más sorprendente. Tomates maduros de cosecha propia con albahaca fresca. A medio camino entre la mermelada y la salsa gourmet. Un producto de autor.',
     uses: 'Nació para tablas de quesos, pero funciona igual de bien con carnes asadas, bruschetta o pizzas artesanales.'
+  },
+  {
+    id: 'j10', emoji: '🫐',
+    img: 'img/MermeladaFrutillayArandano.png',
+    name: 'Arándano y Frutilla',
+    category: 'mermelada', filter: 'especial',
+    flavors: ['Dulce', 'Ácido', 'Silvestre'],
+    desc: 'La combinación perfecta entre la frutilla fresca y el arándano silvestre. Dos frutas del sur de Chile en un solo frasco, llenas de color y antioxidantes naturales.',
+    uses: 'Ideal con yogur natural, pancakes, tostadas con queso crema o como relleno de tortas y postres artesanales.'
+  },
+  {
+    id: 'j11', emoji: '🍑',
+    img: 'img/DuraznoBetarraga.png',
+    name: 'Durazno Betarraga',
+    category: 'mermelada', filter: 'especial',
+    flavors: ['Dulce', 'Terroso', 'Único'],
+    desc: 'Una combinación sorprendente y artesanal: durazno de temporada con betarraga fresca de cosecha propia. Sabor dulce con un toque terroso y un color rojo intenso que enamora.',
+    uses: 'Ideal con queso fresco, yogur natural, tostadas o como relleno gourmet en tartas y postres caseros.'
+  },
+  {
+    id: 'j12', emoji: '🫐',
+    img: 'img/MermeladaMora.png',
+    name: 'Mora',
+    category: 'mermelada', filter: 'acida',
+    flavors: ['Ácido', 'Silvestre', 'Intenso'],
+    desc: 'Moras silvestres recogidas a mano en temporada. Color púrpura profundo y sabor intenso que equilibra lo dulce y lo ácido en cada cucharada. Un clásico artesanal de Ubema.',
+    uses: 'Ideal con yogur, tostadas, queso crema o como topping en helados y postres. También en tabla de quesos.'
   }
 ];
 
@@ -156,29 +165,18 @@ const CHILIS = [
 //  DATOS — HORTALIZAS
 // ════════════════════════════════════════════════════════════════
 const HORTALIZAS = [
-  { id: 'h1',  emoji: '🥬', name: 'Lechugas',          category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Lechugas frescas de hoja suave y crujiente, cosechadas en temporada fría cuando concentran mejor su sabor y textura.' },
-  { id: 'h2',  emoji: '🍅', name: 'Tomates',            category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Tomates de temporada con todo su color y jugosidad, cultivados en el campo Ubema sin prisa.' },
-  { id: 'h3',  emoji: '🟣', name: 'Betarraga',          category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Betarragas dulces y terrosas, perfectas para ensaladas, jugos y acompañamientos nutritivos.' },
-  { id: 'h4',  emoji: '🥦', name: 'Repollo',            category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Repollo verde firme y fresco, ideal para ensaladas, rellenos y guisos de temporada.' },
-  { id: 'h5',  emoji: '🟣', name: 'Repollo Morado',    category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Repollo morado vibrante con sabor ligeramente más dulce que el verde, excelente en encurtidos y ensaladas.' },
-  { id: 'h6',  emoji: '🫘', name: 'Habas',              category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Habas tiernas y nutritivas, recogidas en su punto justo para aprovechar todo su sabor y textura cremosa.' },
-  { id: 'h7',  emoji: '🌿', name: 'Cebollín',           category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Cebollines frescos y aromáticos, corte a corte durante toda la temporada fría.' },
-  { id: 'h8',  emoji: '🌿', name: 'Apio',               category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Apio crujiente y aromático, perfecto para caldos, ensaladas y como base de sofritos.' },
-  { id: 'h9',  emoji: '🌿', name: 'Perejil',            category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Perejil fresco de hoja plana, aromático y lleno de sabor, indispensable en la cocina.' },
-  { id: 'h10', emoji: '🥦', name: 'Coliflor',           category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Coliflor blanca y compacta, cosechada en temporada fría cuando alcanza su mejor calidad.' },
-  { id: 'h11', emoji: '🌶️', name: 'Ají Negro',          category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Ají negro de sabor único e intenso, cultivado en temporada cálida con todo el carácter de nuestra tierra.' },
-  { id: 'h12', emoji: '🌶️', name: 'Ají Blanco',         category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Ají blanco de sabor suave y aromático, especial para dar toque de la cosecha de primavera-verano.' },
-  { id: 'h13', emoji: '🌿', name: 'Chascu',             category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Hierba autóctona de sabor intenso y profundo, parte de la tradición culinaria del sur de Chile.' },
-  { id: 'h14', emoji: '🧅', name: 'Cebolla',            category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Cebollas de primavera recién cosechadas, dulces y tiernas, perfectas para todo tipo de preparaciones.' },
-  { id: 'h15', emoji: '🌿', name: 'Porros',             category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Porros frescos de temporada, de sabor suave y delicado, ideales para sopas y guisos.' },
-  { id: 'h16', emoji: '🍅', name: 'Tomates',            category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Tomates de verano maduros bajo el sol, jugosos y llenos de sabor en su mejor momento.' },
-  { id: 'h17', emoji: '🥒', name: 'Pepinos',            category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Pepinos frescos y crujientes de temporada de verano, perfectos para ensaladas y encurtidos.' },
-  { id: 'h18', emoji: '🥕', name: 'Zanahorias',         category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Zanahorias dulces y coloridas recién sacadas de la tierra, con toda su frescura y nutrientes.' },
-  { id: 'h19', emoji: '🌿', name: 'Pasto Verde',        category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Hierba fresca de primavera, aromática y versátil para múltiples usos culinarios.' },
-  { id: 'h20', emoji: '🟩', name: 'Zapallo Italiano',  category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Zapallo italiano tierno y brillante de temporada alta, delicado y muy versátil en la cocina.' },
-  { id: 'h21', emoji: '🥬', name: 'Lechugas',           category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Lechugas de verano con hojas amplias y frescas, perfectas para ensaladas del mediodía.' },
-  { id: 'h22', emoji: '🌿', name: 'Cilantro',           category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Cilantro fresco y aromático de temporada, indispensable en salsas, pebres y ensaladas chilenas.' }
+  { id: 'h1',  emoji: '🥬', img: 'img/lechuga.png',  name: 'Lechugas',  category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Lechugas frescas de hoja suave y crujiente, cosechadas en temporada fría cuando concentran mejor su sabor y textura.' },
+  { id: 'h2',  emoji: '🍅', img: 'img/tomates.png',  name: 'Tomates',   category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Tomates de temporada con todo su color y jugosidad, cultivados en el campo Ubema sin prisa.' },
+  { id: 'h3',  emoji: '🟣', img: 'img/betarrafga.png', name: 'Betarraga', category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Betarragas dulces y terrosas, perfectas para ensaladas, jugos y acompañamientos nutritivos.' },
+  { id: 'h4',  emoji: '🥦', img: 'img/repollo.png',  name: 'Repollo',   category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Repollo verde firme y fresco, ideal para ensaladas, rellenos y guisos de temporada.' },
+  { id: 'h8',  emoji: '🌿', img: 'img/apio.png',     name: 'Apio',      category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Apio crujiente y aromático, perfecto para caldos, ensaladas y como base de sofritos.' },
+  { id: 'h9',  emoji: '🌿', img: 'img/perejil.png',  name: 'Perejil',   category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Perejil fresco de hoja plana, aromático y lleno de sabor, indispensable en la cocina.' },
+  { id: 'h10', emoji: '🥦', img: 'img/coliflor.png', name: 'Coliflor',  category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Coliflor blanca y compacta, cosechada en temporada fría cuando alcanza su mejor calidad.' },
+  { id: 'h14', emoji: '🧅', img: 'img/cebolla.png',  name: 'Cebolla',   category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Cebollas de primavera recién cosechadas, dulces y tiernas, perfectas para todo tipo de preparaciones.' },
+  { id: 'h16', emoji: '🍅', img: 'img/tomates.png',  name: 'Tomates',   category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Tomates de verano maduros bajo el sol, jugosos y llenos de sabor en su mejor momento.' },
+  { id: 'h17', emoji: '🥒', img: 'img/pepino.png',   name: 'Pepinos',   category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Pepinos frescos y crujientes de temporada de verano, perfectos para ensaladas y encurtidos.' }
 ];
+
 
 // ════════════════════════════════════════════════════════════════
 //  NAV
@@ -271,11 +269,11 @@ function createJamCard(item) {
   const card = document.createElement('div');
   card.className = 'product-card';
   card.dataset.filter = item.filter;
+  const mediaArea = item.img
+    ? `<div class="card-img-area"><img src="${item.img}" alt="${item.name}" class="card-product-img" /><div class="category-badge">${filterLabel(item.filter)}</div></div>`
+    : `<div class="card-emoji-area">${item.emoji}<div class="category-badge">${filterLabel(item.filter)}</div></div>`;
   card.innerHTML = `
-    <div class="card-emoji-area">
-      ${item.emoji}
-      <div class="category-badge">${filterLabel(item.filter)}</div>
-    </div>
+    ${mediaArea}
     <div class="card-body">
       <span class="card-label">Mermelada artesanal · Ubema</span>
       <p class="card-name">${item.name}</p>
@@ -315,11 +313,11 @@ function createHortalizaCard(item) {
   const card = document.createElement('div');
   card.className = 'product-card';
   card.dataset.filter = item.filter;
+  const mediaArea = item.img
+    ? `<div class="card-img-area"><img src="${item.img}" alt="${item.name}" class="card-product-img" /><div class="category-badge season-badge">${item.season}</div></div>`
+    : `<div class="card-emoji-area">${item.emoji}<div class="category-badge season-badge">${item.season}</div></div>`;
   card.innerHTML = `
-    <div class="card-emoji-area">
-      ${item.emoji}
-      <div class="category-badge season-badge">${item.season}</div>
-    </div>
+    ${mediaArea}
     <div class="card-body">
       <span class="card-label">Hortaliza · Ubema</span>
       <p class="card-name">${item.name}</p>
@@ -368,8 +366,11 @@ const modalBody    = document.getElementById('modalBody');
 const modalClose   = document.getElementById('modalClose');
 
 function openModal(item) {
+  const banner = item.img
+    ? `<div class="modal-img-banner"><img src="${item.img}" alt="${item.name}" /></div>`
+    : `<div class="modal-emoji-banner">${item.emoji}</div>`;
   modalBody.innerHTML = `
-    <div class="modal-emoji-banner">${item.emoji}</div>
+    ${banner}
     <div class="modal-content-inner">
       <p class="modal-category">${item.category === 'ají' ? 'Ají · Ubema' : 'Mermelada artesanal · Ubema'}</p>
       <h2 class="modal-name">${item.name}</h2>
@@ -389,8 +390,11 @@ function openModal(item) {
 }
 
 function openModalHortaliza(item) {
+  const banner = item.img
+    ? `<div class="modal-img-banner"><img src="${item.img}" alt="${item.name}" /></div>`
+    : `<div class="modal-emoji-banner">${item.emoji}</div>`;
   modalBody.innerHTML = `
-    <div class="modal-emoji-banner">${item.emoji}</div>
+    ${banner}
     <div class="modal-content-inner">
       <p class="modal-category">Hortaliza · Ubema</p>
       <h2 class="modal-name">${item.name}</h2>

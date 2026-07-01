@@ -26,6 +26,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#mermeladas">Mermeladas</a></li>
+        <li><a href="#miel">Miel</a></li>
         <li><a href="#ajies">Ajíes</a></li>
         <li><a href="#hortalizas">Hortalizas</a></li>
         <li><a href="#contacto" class="nav-cta">Contacto</a></li>
@@ -66,7 +67,37 @@
           </div>
         </div>
 
-        <!-- Controles -->
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img src="img/imagenFeria.png" alt="Ubema en feria — productos artesanales" loading="eager"
+            decoding="async" />
+          <div class="slide-overlay">
+            <p class="slide-eyebrow">Productos artesanales del campo</p>
+            <h1 class="slide-title">Sabores que<br /><em>enamoran</em></h1>
+            <p class="slide-sub">Encuéntranos en ferias locales con toda nuestra variedad artesanal.</p>
+            <div class="slide-cta">
+              <a href="#mermeladas" class="btn-slide-primary">🫙 Mermeladas</a>
+              <a href="#contacto" class="btn-slide-ghost">📍 Encuéntranos</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="hero-slide">
+          <img src="img/negocioUbema.png" alt="Negocio Ubema — local de productos artesanales" loading="eager"
+            decoding="async" />
+          <div class="slide-overlay">
+            <p class="slide-eyebrow">Productos artesanales del campo</p>
+            <h1 class="slide-title">Directo<br /><em>del productor</em></h1>
+            <p class="slide-sub">Sin intermediarios. Calidad garantizada desde nuestra tierra hasta tus manos.</p>
+            <div class="slide-cta">
+              <a href="#nosotros" class="btn-slide-primary">🌾 Nuestra historia</a>
+              <a href="#contacto" class="btn-slide-ghost">📞 Contáctanos</a>
+            </div>
+          </div>
+        </div>
+
+
         <button class="carousel-btn prev" id="carouselPrev" aria-label="Anterior">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="15 18 9 12 15 6" />
@@ -82,6 +113,8 @@
         <div class="carousel-dots" id="carouselDots">
           <button class="carousel-dot active" data-index="0" aria-label="Diapositiva 1"></button>
           <button class="carousel-dot" data-index="1" aria-label="Diapositiva 2"></button>
+          <button class="carousel-dot" data-index="2" aria-label="Diapositiva 3"></button>
+          <button class="carousel-dot" data-index="3" aria-label="Diapositiva 4"></button>
         </div>
 
       </div>
@@ -89,8 +122,9 @@
 
     <div class="hero-pills reveal">
       <div class="pill">🧈 Hortalizas frescas</div>
-      <div class="pill">🫙 Sin conservantes</div>
+      <div class="pill">🪺 Sin conservantes</div>
       <div class="pill">🌶️ Lotes artesanales</div>
+      <div class="pill">🍯 Miel pura</div>
       <div class="pill">🤝 Trato directo</div>
     </div>
   </section>
@@ -110,6 +144,27 @@
         <button class="filter-btn" data-filter="especial">Especiales</button>
       </div>
       <div class="catalog-grid" id="jamGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== MIEL ===== -->
+  <section class="section miel-section" id="miel">
+    <div class="container">
+      <div class="miel-layout reveal">
+        <div class="miel-img-col">
+          <img src="img/miel.png" alt="Miel de Abejas Ubema" class="miel-foto" />
+        </div>
+        <div class="miel-text-col">
+          <p class="section-eyebrow">Producto natural</p>
+          <h2 class="section-title">Miel de<br /><em>Abejas</em></h2>
+          <p class="miel-desc">Miel pura de abejas, solo la miel tal como la naturaleza la entrega.</p>
+          <ul class="miel-atributos">
+            <li>🌿 <span>Natural, sin mezclas</span></li>
+            <li>📍 <span>Rucapequén, Ñuble, Chile</span></li>
+          </ul>
+          <a href="#contacto" class="btn-miel">📞 Consultar disponibilidad</a>
+        </div>
+      </div>
     </div>
   </section>
 
