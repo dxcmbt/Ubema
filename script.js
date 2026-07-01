@@ -96,7 +96,7 @@ const JAMS = [
 // ════════════════════════════════════════════════════════════════
 const CHILIS = [
   {
-    id: 'c1', emoji: '🌶️',
+    id: 'c1', emoji: '🌶️', img: 'img/pastaAji.png',
     name: 'Ají Cacho de Cabra',
     category: 'ají', filter: 'ahumado',
     flavors: ['Ahumado', 'Dulce', 'Seco'],
@@ -104,7 +104,7 @@ const CHILIS = [
     uses: 'Base del merkén, adobos, salsas criollas y cualquier preparación que pida color y sabor.'
   },
   {
-    id: 'c2', emoji: '🫑',
+    id: 'c2', emoji: '🫑', img: 'img/AjiCristal.png',
     name: 'Ají Cristal',
     category: 'ají', filter: 'frutal',
     flavors: ['Frutal', 'Fresco', 'Jugoso'],
@@ -112,7 +112,7 @@ const CHILIS = [
     uses: 'Fresco en ensaladas, picado en pebre, relleno con queso o simplemente asado a las brasas del asado.'
   },
   {
-    id: 'c3', emoji: '🟤',
+    id: 'c3', emoji: '🟤', img: 'img/MerkenUbema.png',
     name: 'Merkén Ubema',
     category: 'ají', filter: 'ahumado',
     flavors: ['Ahumado', 'Terroso', 'Mapuche'],
@@ -120,44 +120,12 @@ const CHILIS = [
     uses: 'Sobre huevos, mantequilla, mariscos, sopas, carnes o simplemente sobre pan con un buen aceite de oliva.'
   },
   {
-    id: 'c4', emoji: '🌶️',
-    name: 'Ají Amarillo',
-    category: 'ají', filter: 'floral',
-    flavors: ['Floral', 'Frutal', 'Cítrico'],
-    desc: 'La estrella de la cocina peruana que ya es nuestra. Naranja vivo con notas florales y cítricas. Aroma que transforma cualquier plato que toca.',
-    uses: 'Indispensable en ají de gallina, ceviches, salsas y guisos. También en pasta mezclado con queso crema.'
-  },
-  {
-    id: 'c5', emoji: '🔴',
+    id: 'c5', emoji: '🔴', img: 'img/AjiRocoto.png',
     name: 'Ají Rocoto',
     category: 'ají', filter: 'intenso',
     flavors: ['Intenso', 'Afrutado', 'Cárnico'],
     desc: 'Rojo encendido, con semillas negras y pared carnosa. Tiene un sabor profundo y afrutado muy característico de la región andina.',
     uses: 'En rellenos como el rocoto relleno peruano, salsas picantes, escabeches y para quienes saben lo que quieren.'
-  },
-  {
-    id: 'c6', emoji: '🟫',
-    name: 'Ají Panca',
-    category: 'ají', filter: 'ahumado',
-    flavors: ['Ahumado', 'Dulce', 'Complejo'],
-    desc: 'Seco y arrugado, de color marrón oscuro. Sabor ahumado, casi achocolatado. Una joya de la despensa andina que aporta profundidad y complejidad.',
-    uses: 'En adobos de cerdo, salsas para pasta, guisos de legumbres o como base de marinadas para asados.'
-  },
-  {
-    id: 'c7', emoji: '🟠',
-    name: 'Ají Habanero',
-    category: 'ají', filter: 'frutal',
-    flavors: ['Tropical', 'Cítrico', 'Afrutado'],
-    desc: 'Anaranjado brillante con notas cítricas y tropicales muy pronunciadas. Un sabor exótico y vibrante que destaca en cualquier preparación.',
-    uses: 'Salsas concentradas, marinadas o aceites saborizados. Aporta aroma tropical inconfundible.'
-  },
-  {
-    id: 'c8', emoji: '🟢',
-    name: 'Ají Verde Chileno',
-    category: 'ají', filter: 'herbaceo',
-    flavors: ['Herbáceo', 'Fresco', 'Vegetal'],
-    desc: 'El del pebre de la abuela. Verde, fresco y con sabor herbáceo que da carácter. Recogido joven, cuando su aroma está en su punto máximo.',
-    uses: 'Pebre, chancho en piedra, ensalada chilena y compañía obligada de cualquier asado que se respete.'
   }
 ];
 
@@ -291,11 +259,11 @@ function createChiliCard(item) {
   const card = document.createElement('div');
   card.className = 'product-card';
   card.dataset.filter = item.filter;
+  const mediaArea = item.img
+    ? `<div class="card-img-area"><img src="${item.img}" alt="${item.name}" class="card-product-img" /><div class="category-badge flavor-badge">${item.flavors[0]}</div></div>`
+    : `<div class="card-emoji-area">${item.emoji}<div class="category-badge flavor-badge">${item.flavors[0]}</div></div>`;
   card.innerHTML = `
-    <div class="card-emoji-area">
-      ${item.emoji}
-      <div class="category-badge flavor-badge">${item.flavors[0]}</div>
-    </div>
+    ${mediaArea}
     <div class="card-body">
       <span class="card-label">Ají · Ubema</span>
       <p class="card-name">${item.name}</p>
