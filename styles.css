@@ -181,6 +181,17 @@ img { display: block; max-width: 100%; }
   background: rgba(253, 251, 245, 0.96);
 }
 
+.nav.modal-open {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav {
+  transition: box-shadow 0.35s, background 0.35s, opacity 0.25s ease, transform 0.25s ease;
+}
+
 .nav-inner {
   max-width: 1120px;
   margin: 0 auto;
@@ -1115,6 +1126,34 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
   height: 190px;
   background: linear-gradient(145deg, var(--ivory-dark) 0%, var(--ivory-mid) 100%);
+}
+
+/* Botón WhatsApp flotante en tarjeta */
+.card-wa-btn {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.7rem;
+  width: 40px;
+  height: 40px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.55);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.card-wa-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.70);
+}
+
+.card-wa-btn svg {
+  width: 21px;
+  height: 21px;
 }
 
 .card-product-img {
