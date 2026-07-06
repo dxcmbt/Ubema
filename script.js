@@ -141,7 +141,6 @@ const HORTALIZAS = [
   { id: 'h9',  emoji: '🌿', img: 'img/perejil.png',  name: 'Perejil',   category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Perejil fresco de hoja plana, aromático y lleno de sabor, indispensable en la cocina.' },
   { id: 'h10', emoji: '🥦', img: 'img/coliflor.png', name: 'Coliflor',  category: 'hortaliza', filter: 'otono-invierno',  season: 'Otoño · Invierno',  desc: 'Coliflor blanca y compacta, cosechada en temporada fría cuando alcanza su mejor calidad.' },
   { id: 'h14', emoji: '🧅', img: 'img/cebolla.png',  name: 'Cebolla',   category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Cebollas de primavera recién cosechadas, dulces y tiernas, perfectas para todo tipo de preparaciones.' },
-  { id: 'h16', emoji: '🍅', img: 'img/tomates.png',  name: 'Tomates',   category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Tomates de verano maduros bajo el sol, jugosos y llenos de sabor en su mejor momento.' },
   { id: 'h17', emoji: '🥒', img: 'img/pepino.png',   name: 'Pepinos',   category: 'hortaliza', filter: 'primavera-verano', season: 'Primavera · Verano', desc: 'Pepinos frescos y crujientes de temporada de verano, perfectos para ensaladas y encurtidos.' }
 ];
 
@@ -189,7 +188,7 @@ function initCarousel() {
   function next() { goTo(current + 1); }
   function prev() { goTo(current - 1); }
 
-  function startAuto() { timer = setInterval(next, 5000); }
+  function startAuto() { timer = setInterval(next, 7000); }
   function stopAuto()  { clearInterval(timer); }
 
   btnNext.addEventListener('click', () => { stopAuto(); next(); startAuto(); });
