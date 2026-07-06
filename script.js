@@ -228,7 +228,7 @@ function createJamCard(item) {
   const card = document.createElement('div');
   card.className = 'product-card';
   card.dataset.filter = item.filter;
-  const waBtn = `<a href="${waURL(item.name)}" target="_blank" rel="noopener" class="card-wa-btn" aria-label="Consultar ${item.name} por WhatsApp">${WA_SVG}</a>`;
+  const waBtn = `<a href="${waURL(item.name, item.category)}" target="_blank" rel="noopener" class="card-wa-btn" aria-label="Consultar ${item.name} por WhatsApp">${WA_SVG}</a>`;
   const mediaArea = item.img
     ? `<div class="card-img-area"><img src="${item.img}" alt="${item.name}" class="card-product-img" /><div class="category-badge">${filterLabel(item.filter)}</div>${waBtn}</div>`
     : `<div class="card-emoji-area">${item.emoji}<div class="category-badge">${filterLabel(item.filter)}</div>${waBtn}</div>`;
@@ -252,7 +252,7 @@ function createChiliCard(item) {
   const card = document.createElement('div');
   card.className = 'product-card';
   card.dataset.filter = item.filter;
-  const waBtn = `<a href="${waURL(item.name)}" target="_blank" rel="noopener" class="card-wa-btn" aria-label="Consultar ${item.name} por WhatsApp">${WA_SVG}</a>`;
+  const waBtn = `<a href="${waURL(item.name, item.category)}" target="_blank" rel="noopener" class="card-wa-btn" aria-label="Consultar ${item.name} por WhatsApp">${WA_SVG}</a>`;
   const mediaArea = item.img
     ? `<div class="card-img-area"><img src="${item.img}" alt="${item.name}" class="card-product-img" /><div class="category-badge flavor-badge">${item.flavors[0]}</div>${waBtn}</div>`
     : `<div class="card-emoji-area">${item.emoji}<div class="category-badge flavor-badge">${item.flavors[0]}</div>${waBtn}</div>`;
@@ -276,7 +276,7 @@ function createHortalizaCard(item) {
   const card = document.createElement('div');
   card.className = 'product-card';
   card.dataset.filter = item.filter;
-  const waBtn = `<a href="${waURL(item.name)}" target="_blank" rel="noopener" class="card-wa-btn" aria-label="Consultar ${item.name} por WhatsApp">${WA_SVG}</a>`;
+  const waBtn = `<a href="${waURL(item.name, item.category)}" target="_blank" rel="noopener" class="card-wa-btn" aria-label="Consultar ${item.name} por WhatsApp">${WA_SVG}</a>`;
   const mediaArea = item.img
     ? `<div class="card-img-area"><img src="${item.img}" alt="${item.name}" class="card-product-img" /><div class="category-badge season-badge">${item.season}</div>${waBtn}</div>`
     : `<div class="card-emoji-area">${item.emoji}<div class="category-badge season-badge">${item.season}</div>${waBtn}</div>`;
@@ -334,8 +334,18 @@ const WA_NUMBER = '56958942951';
 
 const WA_SVG = `<svg viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.478 2.027 7.788L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.268a13.23 13.23 0 01-6.74-1.842l-.483-.285-5.003 1.193 1.218-4.874-.315-.5A13.19 13.19 0 012.732 16C2.732 8.682 8.682 2.732 16 2.732S29.268 8.682 29.268 16 23.318 29.268 16 29.268zm7.258-9.898c-.398-.199-2.353-1.16-2.718-1.292-.365-.133-.63-.199-.895.199-.265.398-1.027 1.292-1.259 1.558-.232.265-.464.299-.862.1-.398-.199-1.68-.619-3.2-1.975-1.183-1.055-1.981-2.358-2.213-2.756-.232-.398-.025-.613.174-.811.179-.178.398-.464.597-.696.199-.232.265-.398.398-.663.133-.265.066-.497-.033-.696-.1-.199-.895-2.157-1.226-2.953-.323-.775-.65-.67-.895-.683-.232-.012-.497-.015-.762-.015-.265 0-.696.1-1.061.497-.365.398-1.393 1.36-1.393 3.317 0 1.957 1.426 3.848 1.625 4.113.199.265 2.807 4.286 6.803 6.01.951.41 1.693.655 2.272.839.954.304 1.823.261 2.51.158.765-.114 2.353-.962 2.685-1.89.332-.928.332-1.724.232-1.89-.1-.166-.365-.265-.763-.464z"/></svg>`;
 
-function waURL(productName) {
-  const msg = `Hola Buenas tardes, ¿esta disponible ${productName}?`;
+function waURL(productName, category) {
+  let displayName;
+  if (category === 'mermelada') {
+    displayName = `la Mermelada de ${productName}`;
+  } else if (category === 'ají') {
+    displayName = `el ${productName}`;
+  } else if (category === 'hortaliza') {
+    displayName = `la ${productName}`;
+  } else {
+    displayName = productName;
+  }
+  const msg = `Buenas Tardes, ¿esta disponible ${displayName}?`;
   return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 
@@ -357,7 +367,7 @@ function openModal(item) {
         <strong>💡 Usos recomendados</strong>
         ${item.uses}
       </div>
-      <a href="${waURL(item.name)}" target="_blank" rel="noopener" class="btn-modal-wa">
+      <a href="${waURL(item.name, item.category)}" target="_blank" rel="noopener" class="btn-modal-wa">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.478 2.027 7.788L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.268a13.23 13.23 0 01-6.74-1.842l-.483-.285-5.003 1.193 1.218-4.874-.315-.5A13.19 13.19 0 012.732 16C2.732 8.682 8.682 2.732 16 2.732S29.268 8.682 29.268 16 23.318 29.268 16 29.268zm7.258-9.898c-.398-.199-2.353-1.16-2.718-1.292-.365-.133-.63-.199-.895.199-.265.398-1.027 1.292-1.259 1.558-.232.265-.464.299-.862.1-.398-.199-1.68-.619-3.2-1.975-1.183-1.055-1.981-2.358-2.213-2.756-.232-.398-.025-.613.174-.811.179-.178.398-.464.597-.696.199-.232.265-.398.398-.663.133-.265.066-.497-.033-.696-.1-.199-.895-2.157-1.226-2.953-.323-.775-.65-.67-.895-.683-.232-.012-.497-.015-.762-.015-.265 0-.696.1-1.061.497-.365.398-1.393 1.36-1.393 3.317 0 1.957 1.426 3.848 1.625 4.113.199.265 2.807 4.286 6.803 6.01.951.41 1.693.655 2.272.839.954.304 1.823.261 2.51.158.765-.114 2.353-.962 2.685-1.89.332-.928.332-1.724.232-1.89-.1-.166-.365-.265-.763-.464z"/></svg>
         Consultar disponibilidad de ${item.name}
       </a>
@@ -382,7 +392,7 @@ function openModalHortaliza(item) {
       <div class="modal-details">
         <span class="modal-chip season">🌱 ${item.season}</span>
       </div>
-      <a href="${waURL(item.name)}" target="_blank" rel="noopener" class="btn-modal-wa">
+      <a href="${waURL(item.name, item.category)}" target="_blank" rel="noopener" class="btn-modal-wa">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.478 2.027 7.788L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.268a13.23 13.23 0 01-6.74-1.842l-.483-.285-5.003 1.193 1.218-4.874-.315-.5A13.19 13.19 0 012.732 16C2.732 8.682 8.682 2.732 16 2.732S29.268 8.682 29.268 16 23.318 29.268 16 29.268zm7.258-9.898c-.398-.199-2.353-1.16-2.718-1.292-.365-.133-.63-.199-.895.199-.265.398-1.027 1.292-1.259 1.558-.232.265-.464.299-.862.1-.398-.199-1.68-.619-3.2-1.975-1.183-1.055-1.981-2.358-2.213-2.756-.232-.398-.025-.613.174-.811.179-.178.398-.464.597-.696.199-.232.265-.398.398-.663.133-.265.066-.497-.033-.696-.1-.199-.895-2.157-1.226-2.953-.323-.775-.65-.67-.895-.683-.232-.012-.497-.015-.762-.015-.265 0-.696.1-1.061.497-.365.398-1.393 1.36-1.393 3.317 0 1.957 1.426 3.848 1.625 4.113.199.265 2.807 4.286 6.803 6.01.951.41 1.693.655 2.272.839.954.304 1.823.261 2.51.158.765-.114 2.353-.962 2.685-1.89.332-.928.332-1.724.232-1.89-.1-.166-.365-.265-.763-.464z"/></svg>
         Consultar disponibilidad de ${item.name}
       </a>
