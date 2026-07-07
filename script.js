@@ -188,7 +188,7 @@ function initCarousel() {
   function next() { goTo(current + 1); }
   function prev() { goTo(current - 1); }
 
-  function startAuto() { timer = setInterval(next, 7000); }
+  function startAuto() { timer = setInterval(next, 3000); }
   function stopAuto()  { clearInterval(timer); }
 
   btnNext.addEventListener('click', () => { stopAuto(); next(); startAuto(); });
@@ -233,7 +233,7 @@ function initNosotrosCarousel() {
   function next() { goTo(current + 1); }
   function prev() { goTo(current - 1); }
 
-  function startAuto() { timer = setInterval(next, 6000); }
+  function startAuto() { timer = setInterval(next, 3000); }
   function stopAuto()  { clearInterval(timer); }
 
   btnNext.addEventListener('click', () => { stopAuto(); next(); startAuto(); });
