@@ -98,8 +98,8 @@ const CHILIS = [
   {
     id: 'c2', emoji: '🫑', img: 'img/AjiCristal.png',
     name: 'Ají Cristal',
-    category: 'ají', filter: 'frutal',
-    flavors: ['Frutal', 'Fresco', 'Jugoso'],
+    category: 'ají', filter: 'fresco',
+    flavors: ['Fresco', 'Frutal', 'Jugoso'],
     desc: 'Verde translúcido y brillante. El más jugoso de todos. Sabor frutal y fresco muy popular en el sur de Chile.',
     uses: 'Fresco en ensaladas, picado en pebre, relleno con queso o simplemente asado a las brasas del asado.'
   },
@@ -114,7 +114,7 @@ const CHILIS = [
   {
     id: 'c5', emoji: '🔴', img: 'img/AjiRocoto.png',
     name: 'Ají Rocoto',
-    category: 'ají', filter: 'intenso',
+    category: 'ají', filter: 'picante',
     flavors: ['Intenso', 'Afrutado', 'Cárnico'],
     desc: 'Rojo encendido, con semillas negras y pared carnosa. Tiene un sabor profundo y afrutado muy característico de la región andina.',
     uses: 'En rellenos como el rocoto relleno peruano, salsas picantes, escabeches y para quienes saben lo que quieren.'
@@ -122,8 +122,8 @@ const CHILIS = [
   {
     id: 'c6', emoji: '🟢', img: 'img/AjiVerde.png',
     name: 'Pasta de Ají Verde',
-    category: 'ají', filter: 'herbaceo',
-    flavors: ['Herbáceo', 'Fresco', 'Natural'],
+    category: 'ají', filter: 'fresco',
+    flavors: ['Fresco', 'Herbáceo', 'Natural'],
     desc: 'Pasta artesanal de ají verde 100% natural de Rucapequén. Elaborada sin conservantes. Sabor intenso y fresco, ideal para quienes buscan el sabor auténtico del campo.',
     uses: 'Perfecta para acompañar asados, empanadas, choripanes o para darle un toque picante y fresco a cualquier guiso casero.'
   }
