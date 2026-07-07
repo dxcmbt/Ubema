@@ -202,6 +202,53 @@ function initCarousel() {
 }
 
 // ════════════════════════════════════════════════════════════════
+//  CARRUSEL NOSOTROS
+// ════════════════════════════════════════════════════════════════
+function initNosotrosCarousel() {
+  const slides = document.querySelectorAll('.nos-slide');
+  const dots   = document.querySelectorAll('.nos-dot');
+  const btnPrev = document.getElementById('nosPrev');
+  const btnNext = document.getElementById('nosNext');
+  if (!slides.length || !btnPrev || !btnNext) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAuto() { timer = setInterval(next, 6000); }
+  function stopAuto()  { clearInterval(timer); }
+
+  btnNext.addEventListener('click', () => { stopAuto(); next(); startAuto(); });
+  btnPrev.addEventListener('click', () => { stopAuto(); prev(); startAuto(); });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      stopAuto();
+      goTo(parseInt(dot.dataset.index));
+      startAuto();
+    });
+  });
+
+  const carousel = document.getElementById('nosotrosCarousel');
+  if (carousel) {
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+  }
+
+  startAuto();
+}
+
+// ════════════════════════════════════════════════════════════════
 //  REVEAL ON SCROLL
 // ════════════════════════════════════════════════════════════════
 function initReveal() {
@@ -421,6 +468,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 // ════════════════════════════════════════════════════════════════
 (function init() {
   initCarousel();
+  initNosotrosCarousel();
   renderCatalog(JAMS,      'jamGrid',      createJamCard);
   renderCatalog(CHILIS,    'chiliGrid',    createChiliCard);
   renderCatalog(HORTALIZAS,'hortalizaGrid',createHortalizaCard);

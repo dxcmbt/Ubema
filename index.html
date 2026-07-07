@@ -303,30 +303,71 @@
             </div>
           </div>
         </div>
-        <div class="nosotros-photos reveal">
-          <div class="nosotros-photo-pair">
-            <div class="nosotros-photo-item">
-              <img src="img/FotoFeriia.png" alt="Ubema en feria local" />
-              <span class="nosotros-photo-caption">Feria local</span>
-            </div>
-            <div class="nosotros-photo-item">
-              <img src="img/FotoFeriaCampesinapng.png" alt="Mercado Campesino INDAP" />
-              <span class="nosotros-photo-caption">Mercado Campesino</span>
-            </div>
+      </div>
+    </div>
+
+    <!-- Carrusel de fotos — ancho completo -->
+    <div class="nosotros-carousel-wrapper reveal">
+      <div class="nosotros-carousel" id="nosotrosCarousel">
+        <div class="nos-slide active">
+          <img src="img/FotoFeriia.png" alt="Ubema en feria local" />
+          <span class="nos-caption">Feria local</span>
+        </div>
+        <div class="nos-slide">
+          <img src="img/FotoFeriaCampesinapng.png" alt="Mercado Campesino INDAP" />
+          <span class="nos-caption">Mercado Campesino</span>
+        </div>
+        <div class="nos-slide">
+          <img src="img/FotoLab.png" alt="Laboratorio artesanal Ubema" />
+          <span class="nos-caption">Producción artesanal</span>
+        </div>
+        <div class="nos-slide">
+          <img src="img/FotoProductos.png" alt="Nuestros productos" />
+          <span class="nos-caption">Nuestros productos</span>
+        </div>
+
+        <button class="nos-btn nos-prev" id="nosPrev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="nos-btn nos-next" id="nosNext" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <div class="nos-dots" id="nosDots">
+          <button class="nos-dot active" data-index="0" aria-label="Foto 1"></button>
+          <button class="nos-dot" data-index="1" aria-label="Foto 2"></button>
+          <button class="nos-dot" data-index="2" aria-label="Foto 3"></button>
+          <button class="nos-dot" data-index="3" aria-label="Foto 4"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horarios de Ferias -->
+    <div class="ferias-schedule reveal">
+      <p class="section-eyebrow" style="text-align:center;">📍 Encuéntranos</p>
+      <h3 class="ferias-title">Dónde comprar <em>nuestros productos</em></h3>
+      <div class="ferias-cards">
+        <div class="feria-card">
+          <div class="feria-icon">🌿</div>
+          <div class="feria-info">
+            <span class="feria-nombre">Feria Campesina</span>
+            <span class="feria-dia">Domingos</span>
+            <span class="feria-lugar">📍 Rucapequén</span>
+            <span class="feria-hora">🕘 9:00 — 14:00 hrs</span>
           </div>
-          <div class="nosotros-photo-pair">
-            <div class="nosotros-photo-item">
-              <img src="img/FotoLab.png" alt="Laboratorio artesanal Ubema" />
-              <span class="nosotros-photo-caption">Producción artesanal</span>
-            </div>
-            <div class="nosotros-photo-item">
-              <img src="img/FotoProductos.png" alt="Productos Ubema" />
-              <span class="nosotros-photo-caption">Nuestros productos</span>
-            </div>
+        </div>
+        <div class="feria-card">
+          <div class="feria-icon">🌾</div>
+          <div class="feria-info">
+            <span class="feria-nombre">Feria Libre Campesina</span>
+            <span class="feria-dia">Sábados</span>
+            <span class="feria-lugar">📍 Chillán Viejo</span>
+            <span class="feria-hora">🕗 8:00 — 15:00 hrs</span>
           </div>
         </div>
       </div>
     </div>
+
   </section>
 
   <!-- ===== FOOTER ===== -->
