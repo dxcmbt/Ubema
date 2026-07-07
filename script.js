@@ -118,6 +118,14 @@ const CHILIS = [
     flavors: ['Intenso', 'Afrutado', 'Cárnico'],
     desc: 'Rojo encendido, con semillas negras y pared carnosa. Tiene un sabor profundo y afrutado muy característico de la región andina.',
     uses: 'En rellenos como el rocoto relleno peruano, salsas picantes, escabeches y para quienes saben lo que quieren.'
+  },
+  {
+    id: 'c6', emoji: '🟢', img: 'img/AjiVerde.png',
+    name: 'Pasta de Ají Verde',
+    category: 'ají', filter: 'herbaceo',
+    flavors: ['Herbáceo', 'Fresco', 'Natural'],
+    desc: 'Pasta artesanal de ají verde 100% natural de Rucapequén. Elaborada sin conservantes. Sabor intenso y fresco, ideal para quienes buscan el sabor auténtico del campo.',
+    uses: 'Perfecta para acompañar asados, empanadas, choripanes o para darle un toque picante y fresco a cualquier guiso casero.'
   }
 ];
 
