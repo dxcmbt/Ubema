@@ -2189,10 +2189,11 @@ img { display: block; max-width: 100%; }
    NOSOTROS — CARRUSEL FULL WIDTH
    ============================================================ */
 .nosotros-carousel-wrapper {
-  width: 100%;
+  width: 90%;
   position: relative;
   overflow: hidden;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
+  border-radius: var(--radius-lg);
   background: var(--text);
   max-height: 560px;
 }
